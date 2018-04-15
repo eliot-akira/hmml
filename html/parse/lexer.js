@@ -3,7 +3,7 @@ const {
   endsWith,
   stringIncludes,
   arrayIncludes
-} = require('./utils')
+} = require('../utils')
 
 module.exports = function lexer (str, options) {
   const state = { str, options, cursor: 0, tokens: [] }
@@ -30,8 +30,8 @@ function lex (state) {
     const tagName = lexTag(state)
     if (tagName) {
       const safeTag = tagName.toLowerCase()
-      const { childlessTags } = state.options
-      if (arrayIncludes(childlessTags, safeTag)) {
+      const { rawTags } = state.options
+      if (arrayIncludes(rawTags, safeTag)) {
         lexSkipTag(tagName, state)
       }
     }

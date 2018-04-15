@@ -1,4 +1,4 @@
-const { arrayIncludes } = require('./utils')
+const { arrayIncludes } = require('../utils')
 
 module.exports = function parser (tokens, options) {
   const root = { tagName: null, children: [] }

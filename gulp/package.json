@@ -1,0 +1,20 @@
+{
+  "name": "gulp-hmml",
+  "version": "0.0.1",
+  "description": "Gulp transform for hmml",
+  "main": "index.js",
+  "bin": {
+  },
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "author": "Eliot Akira",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliot-akira/hmml/tree/master/gulp"
+  },
+  "license": "MIT"
+}

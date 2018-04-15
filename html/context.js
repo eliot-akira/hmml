@@ -1,9 +1,23 @@
 
+const tags = {
+  // [tag]: function (attributes, children, context)
+}
+
+/*
+  Tags which do not need the closing tag
+  For example: <img> does not need </img>
+*/
+const voidTags = [
+  '!doctype', 'area', 'base', 'br', 'col', 'command',
+  'embed', 'hr', 'img', 'input', 'keygen', 'link',
+  'meta', 'param', 'source', 'track', 'wbr'
+]
+
 /*
   Tags which contain arbitrary non-parsed content
   For example: <script> JavaScript should not be parsed
 */
-const childlessTags = ['style', 'script', 'template']
+const rawTags = ['style', 'script', 'template']
 
 /*
   Tags which auto-close because they cannot be nested
@@ -17,7 +31,7 @@ const closingTags = [
 /*
   Closing tags which have ancestor tags which
   may exist within them which prevent the
-  closing tag = require(auto-closing.
+  closing tag from auto-closing.
   For example: in <li><ul><li></ul></li>,
   the top-level <li> should not auto-close.
 */
@@ -27,19 +41,10 @@ const closingTagAncestorBreakers = {
   dd: ['dl']
 }
 
-/*
-  Tags which do not need the closing tag
-  For example: <img> does not need </img>
-*/
-const voidTags = [
-  '!doctype', 'area', 'base', 'br', 'col', 'command',
-  'embed', 'hr', 'img', 'input', 'keygen', 'link',
-  'meta', 'param', 'source', 'track', 'wbr'
-]
-
 module.exports = {
+  tags,
   voidTags,
   closingTags,
   closingTagAncestorBreakers,
-  childlessTags
+  rawTags
 }
